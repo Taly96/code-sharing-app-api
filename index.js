@@ -8,7 +8,7 @@ const { Server } = require("socket.io");
 app.use(express.json());
 app.use(cors());
 const server = http.createServer(app);
-require("dotnev").config();
+require("dotenv").config();
 const mongoUrl = process.env.MONGODB_DATABASE_URL;
 let users = 0;
 
