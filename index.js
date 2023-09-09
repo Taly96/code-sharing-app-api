@@ -24,7 +24,7 @@ app.use(
   })
 );
 const PORT = process.env.PORT || 3001;
-
+console.log(mongoUrl);
 mongoose.connect(mongoUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
