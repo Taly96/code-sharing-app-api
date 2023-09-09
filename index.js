@@ -9,7 +9,6 @@ app.use(express.json());
 app.use(cors());
 const server = http.createServer(app);
 require("dotenv").config();
-const mongoUrl = process.env.MONGODB_DATABASE_URL;
 let users = 0;
 
 const io = new Server(server, {
@@ -24,8 +23,8 @@ app.use(
   })
 );
 const PORT = process.env.PORT || 3001;
-console.log(mongoUrl);
-mongoose.connect(mongoUrl, {
+
+mongoose.connect(process.env.MONGODB_DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
